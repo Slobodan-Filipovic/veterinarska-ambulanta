@@ -10,7 +10,11 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="Veterinar.findAll", query="SELECT v FROM Veterinar v")
+@NamedQueries({
+		@NamedQuery(name="Veterinar.findAll", query="SELECT v FROM Veterinar v"),
+		@NamedQuery(name = "Veterinar.findByName", query = "SELECT v FROM Veterinar v WHERE v.ime like :ime")
+		 
+		})
 public class Veterinar implements Serializable {
 	private static final long serialVersionUID = 1L;
 
